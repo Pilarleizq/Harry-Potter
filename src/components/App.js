@@ -1,26 +1,62 @@
 /* SECCIÓN DE IMPORT */
-
-// - De React
-// - Nuestros
-// - Sass
+//Estilos
 import '../styles/App.scss';
-// - Imágenes
+//React
+import { useEffect, useState } from 'react';
+import {Route, Routes} from "react-router-dom";
+//Míos
+import getDataApi from '../services/api';
+import listCharacter from './listCharacter';
+import Character from './Character';
 
-/* SECCIÓN DEL COMPONENTE */
+
 function App() {
-  /* VARIABLES ESTADO (DATOS) */
 
-  /* EFECTOS (código cuando carga la página) */
+  const [list, setList] = useState([]);
 
-  /* FUNCIONES HANDLER */
 
-  /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
+  useEffect(() => {
+    getDataApi()
+    .then((data) => {
+      setList(data);
+    });
+  }, []);
 
-  /* HTML */
-  return <div className="App">{/* Aquí va el HTML */}</div>;
+  
+  
+  return ( 
+  <div className="App">
+    <header className="header">
+    <h1 className="title">Harry Potter</h1>
+    <form className="form">
+      <label htmlFor="filter">
+        Busca el personaje:
+        <input 
+        className="filter-character" 
+        autocomplete="off"
+        type="search"
+        id="filter"
+        name="filter"
+        placeholder="Nombre del personaje"
+        />
+      </label>
+      <label htmlFor="house">
+        Elige la casa:
+      <select className="filter-house" id="house" name="house">
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+        </select>
+      </label>
+    </form>
+  </header>
+  <main>
+  <listCharacter list={list}/>
+  </main>
+  </div>
+);
 }
 
-/* PROP-TYPES */
 
-/* EXPORT DEL COMPONENTE */
 export default App;
