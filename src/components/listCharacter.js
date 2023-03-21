@@ -1,9 +1,9 @@
-import Character from "./Character";
+ import Character from "./Character";
 
-function listCharacter ({list}) {
-    const dataHtml = list => {
-        return <Character/>
-    }
+function ListCharacter ({list}) {
+    const dataHtml = list.map(eachCharacter => {
+        return <Character key={eachCharacter.id} Character={eachCharacter}/>
+    })
 return (
     
         <ul className="list">
@@ -13,4 +13,4 @@ return (
     );
 }
 
-export default listCharacter;
+export default ListCharacter;
