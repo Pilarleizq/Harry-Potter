@@ -8,6 +8,10 @@
 
 .body {
     background-color: rgb(235, 183, 144);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+    background-image: url("https://img2.wallspic.com/crops/4/1/0/8/4/148014/148014-bruma-desierto-montana-highland-niebla-3648x5472.jpg");
 }
 
 .image-header {
@@ -56,6 +60,14 @@
         font-family: 'Cinzel', serif;
         
     }
+
+    &-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+    }
 }
 
 .filter-character{
@@ -63,6 +75,7 @@
     padding: 3px;
     width: 150px;
     background-color:  rgb(245, 217, 195);
+    box-shadow: 5px 3px 9px black;
 }
 
 .filter-house{
@@ -86,6 +99,9 @@
     align-items: center;
     padding: 20px;
     margin: 5px;
+    background-color: rgb(201, 201, 201);
+    box-shadow: 5px 3px 9px black;
+    border-radius: 2%;
     
     
 }
@@ -120,4 +136,17 @@
 .gender {
     font-family: 'Farsan', cursive;
     color: rgb(142, 84, 61);
+}
+
+.not-found{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:200px;
+    background-color: dimgray;
+    padding:30px;
+    box-shadow: 6px 5px 10px rgb(0, 0, 0);
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
 }

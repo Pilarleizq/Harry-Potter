@@ -1,0 +1,42 @@
+.landing-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 0.2em 0.2em 0.4em;
+    margin-bottom: 50px;
+}
+
+.button {
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    border: 2px solid white;
+    color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: auto;
+    padding: 40px;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 50%;
+    &:hover{
+        background-color: white;
+        color:black;
+        transform: scale(150%);
+        border: 2px solid white;
+        opacity: 80%;
+    }
+}
+
+.gif{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
