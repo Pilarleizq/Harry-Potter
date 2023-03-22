@@ -34,6 +34,7 @@ function App() {
   return ( 
   <div className="App">
     <header headerLogo={headerLogo} className="header">
+      <p class="title" >Harry Potter 🪄</p>
     <Filter selectedHouseLift={selectedHouseLift} ></Filter>
   </header>
   <main>

@@ -7,12 +7,20 @@
 }
 
 .App {
-    background-color: dimgray;
+    background-color: rgb(235, 183, 144);
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 40px;
+    width: 400px;
+    height: 20px;
+    margin-bottom: 50px;
 }
 
 
 .header {
-    border: 3px solid green;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -21,19 +29,24 @@
 }
 
 .form {
-    border: 3px solid darkblue;
+    background-color: rgb(194, 105, 53);
+    box-shadow: 5px 3px 9px black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
+    font-family: 'Cinzel', serif;
+    
 
     &-filterone{
         margin: 10px;
+        font-family: 'Cinzel', serif;
     }
 
     &-filtertwo{
         margin: 10px;
+        font-family: 'Cinzel', serif;
     }
 }
 
@@ -55,8 +68,11 @@
 
 .li-element {
     display: inline-block;
-    padding: 25.15px;
-    background-color: dimgrey;
+    justify-self:center;
+    align-items: center;
+    padding: 20px;
+    margin: 5px;
+    
     
 }
 
@@ -64,6 +80,7 @@
     width: 150px;
     height: 225px;
     margin: 10px;
+    box-shadow: 6px 5px 10px rgb(0, 0, 0);
 }
 
 .characters {
@@ -71,9 +88,12 @@
 }
 
 .name-character{
-    color: white;
+    color: rgb(0, 0, 0);
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
 }
 
 .especie {
-    color: rgb(192, 187, 187);
+    color: rgb(194, 105, 53);
+    font-family: 'Farsan', cursive;
 }
