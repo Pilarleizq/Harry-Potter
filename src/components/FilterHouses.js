@@ -5,7 +5,7 @@ const selectedHouse = (event) => {
 }
 
     return ( 
-    <label htmlFor="house">
+    <label className="form-filtertwo" htmlFor="house">
     Elige la casa:
         <select onInput={selectedHouse}className="filter-house" id="house" name="house">
     <option value="Gryffindor">Gryffindor</option>

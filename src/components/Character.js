@@ -2,7 +2,7 @@ function Character ({Character}) {
 
     return(
         <li className="li-element">
-            <a href=".">
+            <a className="characters" href=".">
                 <img className="img" 
                 src={Character.image ? Character.image : "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Harry_Potter_Book_and_Wand.jpg/800px-Harry_Potter_Book_and_Wand.jpg"}
                 alt="foto del personaje"

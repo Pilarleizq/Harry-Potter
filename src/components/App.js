@@ -1,9 +1,10 @@
 /* SECCIÓN DE IMPORT */
-//Estilos
+//Estilos e imágenes
 import '../styles/App.scss';
+import headerLogo from '../images/header.png';
 //React
 import { useEffect, useState } from 'react';
-import {Route, Routes} from "react-router-dom";
+
 //Míos
 import getDataApi from '../services/api';
 import ListCharacter from './ListCharacter';
@@ -32,8 +33,7 @@ function App() {
   
   return ( 
   <div className="App">
-    <header className="header">
-    <h1 className="title">Harry Potter</h1>
+    <header headerLogo={headerLogo} className="header">
     <Filter selectedHouseLift={selectedHouseLift} ></Filter>
   </header>
   <main>
