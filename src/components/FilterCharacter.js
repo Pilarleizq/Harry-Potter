@@ -1,16 +1,23 @@
-function FilterCharacter () {
+function FilterCharacter ({filterName,handlerFilter}) {
+console.log({filterName,handlerFilter});
+const handleInput = (event) => {
+  handlerFilter(event.target.value)
+}
 
     return(
+      <>
         <label className="form-filterone" htmlFor="filter">
-        Busca el personaje:
-        <input 
-        className="filter-character" 
-        type="search"
-        id="filter"
-        name="filter"
-        placeholder="Nombre"
-        />
-      </label>
+          Search character:
+          <input 
+          className="filter-character" 
+          type="search"
+          name="search"
+          placeholder="Name"
+          onInput={handleInput}
+          value={filterName}
+          />
+        </label>
+      </>
     )
 }
 

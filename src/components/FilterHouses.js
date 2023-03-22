@@ -5,15 +5,17 @@ const selectedHouse = (event) => {
 }
 
     return ( 
-    <label className="form-filtertwo" htmlFor="house">
-    Elige la casa:
-        <select onInput={selectedHouse}className="filter-house" id="house" name="house">
-    <option value="Gryffindor">Gryffindor</option>
-    <option value="Hufflepuff">Hufflepuff</option>
-    <option value="Slytherin">Slytherin</option>
-    <option value="Ravenclaw">Ravenclaw</option>
-    </select>
-  </label>
+    <>
+        <label className="form-filtertwo" htmlFor="house">
+        Choose the house:
+            <select onInput={selectedHouse}className="filter-house" id="house" name="house">
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+        <option value="Slytherin">Slytherin</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+        </select>
+    </label>
+  </>
   )
 }
 

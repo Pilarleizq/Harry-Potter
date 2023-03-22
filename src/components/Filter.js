@@ -1,11 +1,11 @@
 import FilterCharacter from "./FilterCharacter";
 import FilterHouses from "./FilterHouses";
 
-function Filter ({selectedHouseLift}) {
+function Filter ({selectedHouseLift,filterName,handlerFilter}) {
 
 return (
     <form className="form">
-     <FilterCharacter></FilterCharacter>
+     <FilterCharacter handlerFilter={handlerFilter} filterName={filterName}></FilterCharacter>
       <FilterHouses selectedHouseLift={selectedHouseLift}></FilterHouses>
     </form>
 )
