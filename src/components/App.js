@@ -36,8 +36,8 @@ const handlerActor = (value) => {
   setFilterActor(value);
 }
 
-const renderList = () => {
-  return list
+const renderList = 
+list
  
   .filter((Character) => {
     return Character.name.toLowerCase().includes(filterName.toLowerCase());
@@ -46,7 +46,6 @@ const renderList = () => {
   return Character.actor.toLowerCase().includes(filterActor.toLowerCase());
 })
 
-};
 
   useEffect(() => {
     getDataApi(houses)
@@ -86,7 +85,9 @@ const resetButton = (ev) => {
       }
       ></Route>
       <Route path="*" element={
-        <p className="not-found">This page is not found!! ⚠</p>
+        <section className='section'>
+       <p className="not-found">This page is not found!! ⚠</p>
+       </section>
       }></Route>
       <Route 
       path="/house" 
@@ -100,7 +101,7 @@ const resetButton = (ev) => {
       filterName={filterName}
       filterActor={filterActor}
       resetButton={resetButton}/>
-      <ListCharacter list={renderList()}/>
+      <ListCharacter list={renderList}/>
       </>
       }
       ></Route>

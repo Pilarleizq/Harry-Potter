@@ -45,7 +45,7 @@ const house = () => {
     <div className="detail-container">
         <img 
         className="detail-image"
-        src={characterFind.image}
+        src={characterFind.image ? characterFind.image : "https://w0.peakpx.com/wallpaper/311/864/HD-wallpaper-harry-potter-books-harry-potter-thumbnail.jpg"}
         alt="Foto del personaje"
         title="Foto del personaje"
     ></img>
