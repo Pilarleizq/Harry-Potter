@@ -8,9 +8,10 @@
 
 .body {
     background-color: rgb(235, 183, 144);
+    height: 50%;
    background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
+   background-size:cover;
+   
     background-image: url("https://img2.wallspic.com/crops/4/1/0/8/4/148014/148014-bruma-desierto-montana-highland-niebla-3648x5472.jpg");
 }
 
@@ -42,12 +43,17 @@
     box-shadow: 5px 3px 9px black;
     display: flex;
     flex-direction: column;
-    width: 500px;
-    justify-content: center;
+    width: 400px;
+    justify-content:space-around;
     align-items: center;
     padding: 5px;
     font-family: 'Cinzel', serif;
     
+    &-filter-0{
+        margin: 10px;
+        font-family: 'Cinzel', serif;
+        margin-right: 50px;
+    }
 
     &-filterone{
         margin: 10px;
@@ -67,6 +73,30 @@
         justify-content: center;
         align-items: center;
         padding-bottom: 20px;
+        @media all and (min-width: 768px) {
+            flex-direction: row;
+        }
+
+    }
+}
+
+.reset{
+    margin: 30px;
+    
+    &-btn{
+        cursor: pointer;
+        padding: 15px;
+        background-color:  rgb(0, 0, 0);
+        box-shadow: 5px 3px 9px black;
+        border-radius: 50%;
+    
+    }
+
+    &-img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
     }
 }
 
@@ -83,6 +113,13 @@
     width: 150px;
     background-color:  rgb(245, 217, 195);
    
+}
+
+.gorro{
+    display: flex;
+   position:sticky;
+   margin: auto;
+
 }
 
 .list {
@@ -125,17 +162,26 @@
     color: rgb(0, 0, 0);
     font-family: 'Cinzel', serif;
     font-weight: 400;
-    text-shadow: black 0.2em 0.2em 0.4em;
+    text-shadow: black 0.2em 0.2em 0.3em;
+}
+
+.name-actor{
+    color: rgb(0, 0, 0);
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 10px;
 }
 
 .especie {
     color: rgb(194, 105, 53);
     font-family: 'Farsan', cursive;
+    text-transform: capitalize;
 }
 
 .gender {
     font-family: 'Farsan', cursive;
-    color: rgb(142, 84, 61);
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
 }
 
 .not-found{
@@ -149,4 +195,24 @@
     box-shadow: 6px 5px 10px rgb(0, 0, 0);
     font-family: 'Cinzel', serif;
     font-size: 24px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    justify-content: space-between;
+   
+    align-items: center;
+}
+
+.logo-footer{
+    width: 100px;
+}
+
+.copy{
+    color: white;
+    text-shadow: black 0.2em 0.2em 0.3em;
+    font-family: 'Cinzel', serif;
+   
 }

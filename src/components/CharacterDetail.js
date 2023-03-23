@@ -50,7 +50,9 @@ const house = () => {
         title="Foto del personaje"
     ></img>
     <h4 className="detail-name">
+        <p className="detail-year">{characterFind.yearOfBirth}</p>
     <p className="detail-especie">{characterFind.species}</p>
+    
     <p className="detail-gender">{characterFind.gender}</p>
     <img className="detail-alive" alt="status" src={characterFind.alive ? alive : dead}></img>
     

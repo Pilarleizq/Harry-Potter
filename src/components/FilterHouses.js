@@ -1,4 +1,4 @@
-function FilterHouses({selectedHouseLift}) {
+function FilterHouses({selectedHouseLift, houses}) {
 
 const selectedHouse = (event) => {
     selectedHouseLift(event.target.value);
@@ -8,7 +8,7 @@ const selectedHouse = (event) => {
     <>
         <label className="form-filtertwo" htmlFor="house">
         Choose the house:
-            <select onInput={selectedHouse}className="filter-house" id="house" name="house">
+            <select onInput={selectedHouse}className="filter-house" id="house" name="house" value={houses}>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Hufflepuff">Hufflepuff</option>
         <option value="Slytherin">Slytherin</option>

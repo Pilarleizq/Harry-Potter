@@ -3,10 +3,11 @@
 import '../styles/App.scss';
 import '../styles/Details.scss';
 import headerlogo from '../images/header.png';
+import footerlogo from '../images/footer.png';
 
 //React
 import { useEffect, useState } from 'react';
-import { Link, matchPath, Route, Routes, useLocation } from 'react-router-dom';
+import { matchPath, Route, Routes, useLocation } from 'react-router-dom';
 
 //Míos
 import getDataApi from '../services/api';
@@ -16,16 +17,13 @@ import CharacterDetail from './CharacterDetail';
 import Landing from './Landing';
 
 
-
-
-
 function App() {
 
   const [list, setList] = useState([]);
   const [houses, setHouses] = useState('gryffindor');
   const [filterName, setFilterName] = useState('');
-
-
+  const [filterActor, setFilterActor] = useState('');
+  
  const selectedHouseLift = (value) => {
   setHouses(value)
  }
@@ -34,12 +32,21 @@ function App() {
   setFilterName(value);
 }
 
+const handlerActor = (value) => {
+  setFilterActor(value);
+}
+
 const renderList = () => {
   return list
+ 
   .filter((Character) => {
     return Character.name.toLowerCase().includes(filterName.toLowerCase());
   })
-}
+  .filter((Character) => {
+  return Character.actor.toLowerCase().includes(filterActor.toLowerCase());
+})
+
+};
 
   useEffect(() => {
     getDataApi(houses)
@@ -48,6 +55,7 @@ const renderList = () => {
     });
   }, [houses]);
 
+  list.sort((a,b) => a.name.localeCompare(b.name))
 
 const { pathname } = useLocation();
 
@@ -58,13 +66,18 @@ const characterId = dataUrl !== null? dataUrl.params.id : null
 const characterFind = list
     .find((Character) => Character.id === characterId)
 
+const resetButton = (ev) => {
+  setHouses('gryffindor');
+  setFilterName('');
+  setFilterActor('');
+}
+
   return ( 
   <div className="App">
     <header className="header">
     <img className='image-header' src={headerlogo} alt="dibujo"/>
-
-   
     </header>
+    
     <Routes>
       <Route 
       path="/"
@@ -79,20 +92,32 @@ const characterFind = list
       path="/house" 
       element={
       <>
-       <Filter 
+      <Filter 
+      houses={houses}
       selectedHouseLift={selectedHouseLift} 
-      handlerFilter={handlerFilter} 
-      filterName={filterName}/>
-
+      handlerFilter={handlerFilter}
+      handlerActor={handlerActor} 
+      filterName={filterName}
+      filterActor={filterActor}
+      resetButton={resetButton}/>
       <ListCharacter list={renderList()}/>
-</>
-}
+      </>
+      }
       ></Route>
       <Route 
       path="/character/:id" 
       element={<CharacterDetail characterFind={characterFind}/>}/>
-    </Routes>  
-      
+      </Routes>  
+    
+    
+    <footer className="footer">
+      <small className="copy">Harry Potter &copy;2023</small>
+    <img src={footerlogo} 
+      alt="logo-footer" 
+      className="logo-footer"
+      title="Houses logo"
+    />
+    </footer>
   </div>
 );
 }

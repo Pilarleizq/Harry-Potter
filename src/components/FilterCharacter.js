@@ -1,5 +1,5 @@
 function FilterCharacter ({filterName,handlerFilter}) {
-console.log({filterName,handlerFilter});
+
 const handleInput = (event) => {
   handlerFilter(event.target.value)
 }
