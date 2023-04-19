@@ -25,6 +25,6 @@ Esta página es un buscador de personajes del mundo de Harry Potter. Encontrará
 ## *¿Quieres aportar algo más?* ¡Deja tu comentario! 💡 
 
 
-[Pilar Leiva Izquierdo 🌻 ](https://github.com/LaiaRuizM)
+[Pilar Leiva Izquierdo 🌻 ](https://github.com/Pilarleizq)
 
 ![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
